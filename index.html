@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pentrix</title>
+
+		<link type="text/css" rel="stylesheet" href="css/material.min.css">
+		<script type="text/javascript" src="js/material.min.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/p5.min.js"></script>
+		<script type="text/javascript" src="js/minimax.js"></script>
+		<script type="text/javascript" src="js/sketch.js"></script>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="game" id="container"></div>
+			<div class="info">
+				<h1 style="margin-top: 5px">PENTRIX</h1>
+				<h2>Play with our AI:</h2>
+				<div>
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="player-1" name="player" checked>
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+						<div class="mdc-radio__ripple"></div>
+					</div>
+					<label for="player-1">Computer Starts</label>
+				</div>
+				<div>
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="player-2" name="player">
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+						<div class="mdc-radio__ripple"></div>
+					</div>
+					<label for="player-2">Human Starts</label>
+				</div>
+				<div style="margin-top: 20px">
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="sign-1" name="sign" checked>
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+						<div class="mdc-radio__ripple"></div>
+					</div>
+					<label for="sign-1">You get X, AI gets O</label>
+				</div>
+				<div>
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="sign-2" name="sign">
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+						<div class="mdc-radio__ripple"></div>
+					</div>
+					<label for="sign-2">You get O, AI gets X</label>
+				</div>
+				<div>
+					<h3>AI Level: <span id="currentVal">3</span></h3>
+					<input name="level" class="slider-bar" id="level" type="range" min="1" value="3" max="5" step="1" list="ticks" oninput="$('#currentVal').html($('#level').val())"><br>
+					<datalist id="ticks"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></datalist>
+				</div>
+				<div style="margin-top: 20px">
+					<button class="mdc-button newGame" style="margin-left: 25%"><span class="mdc-button__ripple"></span>New Game</button>
+				</div>
+			</div>
+		</div>
+		<div class="mdc-snackbar">
+			<div class="mdc-snackbar__surface">
+				<div class="mdc-snackbar__label" role="status" aria-live="polite"></div>
+				<div class="mdc-snackbar__actions">
+				<button type="button" class="mdc-button mdc-snackbar__action newGame">
+					<div class="mdc-button__ripple"></div>
+					<span class="mdc-button__label">Retry</span>
+				</button>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('.newGame').click(reset);
+			});
+		</script>
+	</body>
+</html>
