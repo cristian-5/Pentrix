@@ -10,4 +10,4 @@ It has easy to hard settings and the interface is made using *html* and *css* wh
 It uses a minimax function adapted from tic tac toe.\
 You can work out the details by looking at the code.
 
-The demo runs at https://cristian-a.github.io/Pentrix/
+The demo runs at https://cristian-5.github.io/Pentrix/
